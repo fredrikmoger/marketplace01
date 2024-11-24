@@ -51,6 +51,6 @@ export async function GET() {
   return NextResponse.redirect(
     process.env.NODE_ENV === "development"
       ? "http://localhost:3000"
-      : "https://marketplace01-3poobelpr-fredrikmogers-projects.vercel.app/"
+      : "https://marketplace01-jet.vercel.app"
   );
 }
