@@ -4,13 +4,13 @@ import {
   CardDescription,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card";
-import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
-import prisma from "../lib/db";
-import { Button } from "@/components/ui/button";
-import { CreateStripeAccoutnLink, GetStripeDashboardLink } from "../actions";
-import { Submitbutton } from "../components/SubmitButtons";
-import { unstable_noStore as noStore } from "next/cache";
+} from '@/components/ui/card';
+import { getKindeServerSession } from '@kinde-oss/kinde-auth-nextjs/server';
+import prisma from '../lib/db';
+import { Button } from '@/components/ui/button';
+import { CreateStripeAccoutnLink, GetStripeDashboardLink } from '../actions';
+import { Submitbutton } from '../components/SubmitButtons';
+import { unstable_noStore as noStore } from 'next/cache';
 
 async function getData(userId: string) {
   const data = await prisma.user.findUnique({
@@ -31,8 +31,10 @@ export default async function BillingRoute() {
   const user = await getUser();
 
   if (!user) {
-    throw new Error("Unauthorized");
+    throw new Error('Unauthorized');
   }
+
+  // TODO: Det er en issue med at brukere ikke blir laget i lokalhost (aka kommer ikke inn i supabase). Det gjør at "connect to stripe knappen ikke kommer opp"
 
   const data = await getData(user.id);
   return (

@@ -32,31 +32,31 @@ model Product {
   description      Json
   location         String
   images           String[]
-  productFile      String
+  productFile      String?
   category         CategoryTypes
 
-  views      Int        @default(0) // Number of views
-  favourites Int        @default(0) // Number of likes
+  views      Int?       @default(0) // Number of views
+  favourites Int?       @default(0) // Number of likes
   advertType AdvertType // For sale, etc.
 
-  breed              String[] // List of breeds
-  petsInLitter       Int // Number of pets in the litter
-  ageInMonths        Int // Age in months
-  readyToLeave       DateTime // Date when the pets are ready to leave
-  viewableWithMother Boolean // Whether the litter is viewable with the mother
+  breed              String? // List of breeds
+  petsInLitter       Int? // Number of pets in the litter
+  ageInMonths        Int? // Age in months
+  readyToLeave       DateTime? // Date when the pets are ready to leave
+  viewableWithMother Boolean? // Whether the litter is viewable with the mother
 
-  microchipped         Boolean // Microchipped by collection date
-  neutered             Boolean // Neutered status
-  vaccinationsUpToDate Boolean // Whether vaccinations are up to date
-  wormAndFleaTreated   Boolean // Whether worm and flea treatments are done
-  healthCheckedByVet   Boolean // Whether health checked by a vet
-  gccfRegistered       Boolean // GCCF registration status
+  microchipped         Boolean? // Microchipped by collection date
+  neutered             Boolean? // Neutered status
+  vaccinationsUpToDate Boolean? // Whether vaccinations are up to date
+  wormAndFleaTreated   Boolean? // Whether worm and flea treatments are done
+  healthCheckedByVet   Boolean? // Whether health checked by a vet
+  gccfRegistered       Boolean? // GCCF registration status
 
   createdAt       DateTime @default(now())
   User            User?    @relation(fields: [userId], references: [id])
   userId          String?
-  litterDetailsId String
-  healthDocsId    String
+  litterDetailsId String?
+  healthDocsId    String?
 }
 
 enum CategoryTypes {
