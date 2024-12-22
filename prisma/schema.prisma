@@ -13,7 +13,7 @@ model User {
   email                 String
   firstName             String
   lastName              String
-  location              String
+  location              String?
   profileImage          String
   connectedAccountId    String  @unique
   stripeConnectedLinked Boolean @default(false)
@@ -30,14 +30,14 @@ model Product {
   price            Int
   smallDescription String
   description      Json
-  location         String
+  location         String?
   images           String[]
   productFile      String?
   category         CategoryTypes
 
-  views      Int?       @default(0) // Number of views
-  favourites Int?       @default(0) // Number of likes
-  advertType AdvertType // For sale, etc.
+  views      Int?        @default(0) // Number of views
+  favourites Int?        @default(0) // Number of likes
+  advertType AdvertType? // For sale, etc.
 
   breed              String? // List of breeds
   petsInLitter       Int? // Number of pets in the litter
