@@ -13,11 +13,15 @@ model User {
   email                 String
   firstName             String
   lastName              String
+  location              String
   profileImage          String
   connectedAccountId    String  @unique
   stripeConnectedLinked Boolean @default(false)
 
   Product Product[]
+
+  savedListings String[] // Array of Product IDs that the user has saved
+  verifiedBy    String[] // List of verification methods like ["Vipps", "Phone", "Facebook"]
 }
 
 model Product {
@@ -26,17 +30,49 @@ model Product {
   price            Int
   smallDescription String
   description      Json
+  location         String
   images           String[]
   productFile      String
   category         CategoryTypes
 
-  createdAt DateTime @default(now())
-  User      User?    @relation(fields: [userId], references: [id])
-  userId    String?
+  views      Int        @default(0) // Number of views
+  favourites Int        @default(0) // Number of likes
+  advertType AdvertType // For sale, etc.
+
+  breed              String[] // List of breeds
+  petsInLitter       Int // Number of pets in the litter
+  ageInMonths        Int // Age in months
+  readyToLeave       DateTime // Date when the pets are ready to leave
+  viewableWithMother Boolean // Whether the litter is viewable with the mother
+
+  microchipped         Boolean // Microchipped by collection date
+  neutered             Boolean // Neutered status
+  vaccinationsUpToDate Boolean // Whether vaccinations are up to date
+  wormAndFleaTreated   Boolean // Whether worm and flea treatments are done
+  healthCheckedByVet   Boolean // Whether health checked by a vet
+  gccfRegistered       Boolean // GCCF registration status
+
+  createdAt       DateTime @default(now())
+  User            User?    @relation(fields: [userId], references: [id])
+  userId          String?
+  litterDetailsId String
+  healthDocsId    String
 }
 
 enum CategoryTypes {
-  template
-  uikit
-  icon
+  hunder
+  katter
+  fisker
+  fugler
+  gnagere
+  reptiler
+  hester
+  kaniner
+  innsekter
+}
+
+// Enum for advert type
+enum AdvertType {
+  FOR_SALE
+  WANTED
 }

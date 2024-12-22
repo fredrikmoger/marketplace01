@@ -39,21 +39,21 @@ export default async function BillingRoute() {
     <section className="max-w-7xl mx-auto px-4 md:px-8">
       <Card>
         <CardHeader>
-          <CardTitle>Billing</CardTitle>
+          <CardTitle>Betalinger</CardTitle>
           <CardDescription>
-            Find all your details regarding your payments
+            Se alle detaljer om betalingene dine
           </CardDescription>
         </CardHeader>
         <CardContent>
           {data?.stripeConnectedLinked === false && (
             <form action={CreateStripeAccoutnLink}>
-              <Submitbutton title="Link your Accout to stripe" />
+              <Submitbutton title="Koble kontoen din til Stripe" />
             </form>
           )}
 
           {data?.stripeConnectedLinked === true && (
             <form action={GetStripeDashboardLink}>
-              <Submitbutton title="View Dashboard" />
+              <Submitbutton title="Se dashboard" />
             </form>
           )}
         </CardContent>

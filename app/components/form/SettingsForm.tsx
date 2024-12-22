@@ -37,24 +37,24 @@ export function SettingsForm({ email, firstName, lastName }: iAppProps) {
   return (
     <form action={formAction}>
       <CardHeader>
-        <CardTitle>Settings</CardTitle>
+        <CardTitle>Profil</CardTitle>
         <CardDescription>
-          Here you will find settings regarding your account
+        Her finner du innstillinger for kontoen din.
         </CardDescription>
       </CardHeader>
       <CardContent className="flex flex-col gap-y-5">
         <div className="flex flex-col gap-y-2">
-          <Label>First Name</Label>
+          <Label>Fornavn</Label>
           <Input name="firstName" type="text" defaultValue={firstName} />
         </div>
 
         <div className="flex flex-col gap-y-2">
-          <Label>Last Name</Label>
+          <Label>Etternavn</Label>
           <Input name="lastName" type="text" defaultValue={lastName} />
         </div>
 
         <div className="flex flex-col gap-y-2">
-          <Label>Email</Label>
+          <Label>E-post</Label>
           <Input
             name="email"
             type="email"
@@ -64,7 +64,7 @@ export function SettingsForm({ email, firstName, lastName }: iAppProps) {
         </div>
       </CardContent>
       <CardFooter>
-        <Submitbutton title="Update your settings" />
+        <Submitbutton title="Oppdater profilinstillinger" />
       </CardFooter>
     </form>
   );

@@ -47,13 +47,13 @@ export function ProductCard({
       </Carousel>
 
       <div className="flex justify-between items-center mt-2">
-        <h1 className="font-semibold text-xl">{name}</h1>
-        <h3 className="inline-flex items-center rounded-md bg-primary/10 px-2 py-1 text-xs font-medium text-primary ring-1 ring-inset  ring-primary/10">
-          ${price}
+        <h1 className="font-semibold text-xl truncate">{name}</h1>
+        <h3 className="inline-flex items-center rounded-md bg-primary/10 px-2 py-1 text-xs font-medium text-primary ring-1 ring-inset ring-primary/10 whitespace-nowrap">
+          {new Intl.NumberFormat('nb-NO').format(price)} kr
         </h3>
       </div>
 
-      <p className="text-gray-600 line-clamp-2 text-sm mt-2">
+      <p className="text-gray-600 line-clamp-2 text-sm mt-2 h-[2.5rem]">
         {smallDescription}
       </p>
 

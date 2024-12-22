@@ -1,26 +1,22 @@
-import { ProductCard } from "@/app/components/ProductCard";
-import prisma from "@/app/lib/db";
-import { type CategoryTypes } from "@prisma/client";
-import { notFound } from "next/navigation";
-import { unstable_noStore as noStore } from "next/cache";
+import { ProductCard } from '@/app/components/ProductCard';
+import prisma from '@/app/lib/db';
+import { type CategoryTypes } from '@prisma/client';
+import { notFound } from 'next/navigation';
+import { unstable_noStore as noStore } from 'next/cache';
 
 async function getData(category: string) {
   let input;
 
   switch (category) {
-    case "template": {
-      input = "template";
+    case 'hunder': {
+      input = 'hunder';
       break;
     }
-    case "uikit": {
-      input = "uikit";
+    case 'katter': {
+      input = 'katter';
       break;
     }
-    case "icon": {
-      input = "icon";
-      break;
-    }
-    case "all": {
+    case 'all': {
       input = undefined;
       break;
     }

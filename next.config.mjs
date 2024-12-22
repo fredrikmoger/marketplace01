@@ -7,6 +7,11 @@ const nextConfig = {
         protocol: "https",
         port: "",
       },
+      {
+        hostname: "images.finncdn.no", // Add this domain
+        protocol: "https",
+        port: "",
+      },
     ],
   },
 };

@@ -6,15 +6,15 @@ import { Suspense } from "react";
 import { Skeleton } from "@/components/ui/skeleton";
 
 interface iAppProps {
-  category: "newest" | "templates" | "uikits" | "icons";
+  category: "nyeste" | "hunder" | "katter";
 }
 
 async function getData({ category }: iAppProps) {
   switch (category) {
-    case "icons": {
+    case "hunder": {
       const data = await prisma.product.findMany({
         where: {
-          category: "icon",
+          category: "hunder",
         },
         select: {
           price: true,
@@ -28,11 +28,11 @@ async function getData({ category }: iAppProps) {
 
       return {
         data: data,
-        title: "Icons",
-        link: "/products/icon",
+        title: "Hunder",
+        link: "/products/Hunder",
       };
     }
-    case "newest": {
+    case "nyeste": {
       const data = await prisma.product.findMany({
         select: {
           price: true,
@@ -49,14 +49,14 @@ async function getData({ category }: iAppProps) {
 
       return {
         data: data,
-        title: "Newest Products",
+        title: "Nyeste",
         link: "/products/all",
       };
     }
-    case "templates": {
+    case "katter": {
       const data = await prisma.product.findMany({
         where: {
-          category: "template",
+          category: "katter",
         },
         select: {
           id: true,
@@ -69,30 +69,9 @@ async function getData({ category }: iAppProps) {
       });
 
       return {
-        title: "Templates",
+        title: "Katter",
         data: data,
-        link: "/products/template",
-      };
-    }
-    case "uikits": {
-      const data = await prisma.product.findMany({
-        where: {
-          category: "uikit",
-        },
-        select: {
-          id: true,
-          name: true,
-          price: true,
-          smallDescription: true,
-          images: true,
-        },
-        take: 3,
-      });
-
-      return {
-        title: "Ui Kits",
-        data: data,
-        link: "/products/uikit",
+        link: "/products/Katter",
       };
     }
     default: {
@@ -123,7 +102,7 @@ async function LoadRows({ category }: iAppProps) {
           href={data.link}
           className="text-sm hidden font-medium text-primary hover:text-primary/90 md:block"
         >
-          All Products <span>&rarr;</span>
+          Se alle <span>&rarr;</span>
         </Link>
       </div>
 

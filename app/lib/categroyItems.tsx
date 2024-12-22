@@ -8,23 +8,17 @@ interface iAppProps {
   id: number;
 }
 
-export const categoryItems: iAppProps[] = [
+export const categoryItems: iAppProps[] = [ // TODO: Legg til flere kategorier
   {
     id: 0,
-    name: "template",
-    title: "Template",
+    name: "hunder",
+    title: "Hunder",
     image: <Globe />,
   },
   {
     id: 1,
-    name: "uikit",
-    title: "Ui Kit",
+    name: "katter",
+    title: "Katter",
     image: <ChefHat />,
-  },
-  {
-    id: 2,
-    name: "icon",
-    title: "Icon",
-    image: <PartyPopper />,
-  },
+  }
 ];

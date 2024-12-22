@@ -17,7 +17,7 @@ export async function Navbar() {
       <div className="md:col-span-3">
         <Link href="/">
           <h1 className="text-2xl font-semibold ">
-            Marshal<span className="text-primary">UI</span>
+            Pets<span className="text-primary">4</span>Homes
           </h1>
         </Link>
       </div>
@@ -36,15 +36,15 @@ export async function Navbar() {
         ) : (
           <div className="flex items-center gap-x-2">
             <Button asChild>
-              <LoginLink>Login</LoginLink>
+              <LoginLink>Logg inn</LoginLink>
             </Button>
             <Button variant="secondary" asChild>
-              <RegisterLink>Register</RegisterLink>
+              <RegisterLink>Ny bruker</RegisterLink>
             </Button>
           </div>
         )}
 
-        <div className="md:hidden">
+        <div className="md:show">
           <MobileMenu />
         </div>
       </div>

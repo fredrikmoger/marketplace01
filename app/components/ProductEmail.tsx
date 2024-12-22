@@ -8,7 +8,9 @@ import {
   Section,
   Tailwind,
   Text,
-} from "@react-email/components";
+} from '@react-email/components';
+
+// TODO: Fix text below
 
 export default function ProductEmail({ link }: { link: string }) {
   return (
@@ -41,6 +43,6 @@ export default function ProductEmail({ link }: { link: string }) {
 }
 
 const container = {
-  margin: "0 auto",
-  padding: "20px 0 48px",
+  margin: '0 auto',
+  padding: '20px 0 48px',
 };

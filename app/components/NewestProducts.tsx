@@ -27,13 +27,13 @@ export async function NewestProducts() {
     <section className="mt-12">
       <div className="md:flex md:items-center md:justify-between">
         <h2 className="text-2xl font-extrabold tracking-tighter ">
-          Newest Products
+          Nyeste
         </h2>
         <Link
           href="#"
           className="text-sm hidden font-medium text-primary hover:text-primary/90 md:block"
         >
-          All Products <span>&rarr;</span>
+          Alle dyr <span>&rarr;</span>
         </Link>
       </div>
 
