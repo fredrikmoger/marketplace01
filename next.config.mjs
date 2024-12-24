@@ -12,6 +12,11 @@ const nextConfig = {
         protocol: "https",
         port: "",
       },
+      {
+        hostname: "uploadthing.com", // Add this domain
+        protocol: "https",
+        port: "",
+      },
     ],
   },
 };
